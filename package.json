@@ -1,7 +1,7 @@
 {
   "name": "sonarqube",
   "version": "1.0.0",
-  "description": "Demo for sonarqube and checkmarx",
+  "description": "Demo version for sonarqube and checkmarx",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/Femeo/checkmarxAndSonarqube#readme",
   "dependencies": {
-    "express": "^4.14.0",
-    "fs": "0.0.1-security"
+    "express": "^4.14.0"
   }
 }
