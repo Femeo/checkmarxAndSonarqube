@@ -3,8 +3,11 @@
     <title>SonarCheck</title>
     <meta name="description" content="This page is to demo the use of Sonarqube and CheckMarks and establish whether or not they are the righ technologies to use">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="public/Stylesheets/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" type="text/css" href="/Stylesheets/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/Stylesheets/app.css">
+    
+    <script src="/Javascript/app.js"></script>
+    <script src="/jquery/jquery.min.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -34,7 +37,7 @@
 
       <div class="form-group">
           <div class="col-md-12">
-              <button type="submit" class="btn btn-primary pull-right" id="submit">Login <span class="glyphicon glyphicon-log-in"></span></button>
+              <button type="submit" class="btn btn-primary pull-right" id="submit" onClick="login()">Login <span class="glyphicon glyphicon-log-in"></span></button>
               <a class="pull-left" href="#">Forgot Password?</a>
           </div>
       </div>
