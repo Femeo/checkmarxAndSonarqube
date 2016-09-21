@@ -10,14 +10,18 @@
     <script src="/Javascript/app.js"></script>
     <script src="/jquery/jquery.min.js"></script>
     <script src="/Javascript/bootstrap.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <!-- Navigation bar for the log in page -->
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a href="/" class="navbar-brand text-center"><p><img src="/images/sonar.png" class="logo"> and <img src="/images/check.png" class="logo" height="35" width="200"> Examples</p></a>
+                <a href="/" class="navbar-brand text-center">
+                    <p><img src="/images/sonar.png" class="logo"> and <img src="/images/check.png" class="logo" height="35"
+                            width="200"> Examples</p>
+                </a>
             </div>
             <ul class="nav navbar-nav">
             </ul>
@@ -26,29 +30,29 @@
 
     <!-- Log in form containing username and password fields -->
     <div class="container middle">
-      <form role="form" class="form-horizontal" method="post" action="/login">
-          <!-- Username field -->
-          <div class="form-group">
-              <label class="control-label col-md-2">Username:</label>
-              <div class="col-md-10">
-                  <input type="text" class="form-control input-sm" name="username" placeholder="joe0bloggs" id="username" />
-              </div>
-          </div>
-          <!-- Password field -->
-          <div class="form-group">
-              <label class="control-label col-md-2">Password:</label>
-              <div class="col-md-10">
-                  <input type="password" class="form-control input-sm" name="password" placeholder="**********" id="password" />
-              </div>
-          </div>
+        <form role="form" class="form-horizontal" method="post" action="/login">
+            <!-- Username field -->
+            <div class="form-group">
+                <label class="control-label col-md-2">Username:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control input-sm" name="username" placeholder="joe0bloggs" id="username" />
+                </div>
+            </div>
+            <!-- Password field -->
+            <div class="form-group">
+                <label class="control-label col-md-2">Password:</label>
+                <div class="col-md-10">
+                    <input type="password" class="form-control input-sm" name="password" placeholder="**********" id="password" />
+                </div>
+            </div>
 
-          <!-- Submit button -->
-          <div class="form-group">
-              <div class="col-md-12">
-                  <button type="submit" class="btn btn-primary pull-right" id="submit" onClick="login()">Login <span class="glyphicon glyphicon-log-in"></span></button>
-                  <a class="pull-left" href="#">Forgot Password?</a>
-              </div>
-          </div>
+            <!-- Submit button -->
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary pull-right" id="submit" onClick="login()">Login <span class="glyphicon glyphicon-log-in"></span></button>
+                    <a class="pull-left" href="#">Forgot Password?</a>
+                </div>
+            </div>
         </form>
     </div>
 
@@ -56,10 +60,11 @@
     <div class="footer">
         <div class="container">
             <div class="builtBy">
-              <h4>Built by Devops</h4>
+                <h4>Built by Devops</h4>
             </div>
         </div>
     </div>
 
-  </body>
+</body>
+
 </html>
