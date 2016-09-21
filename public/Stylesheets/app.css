@@ -3,3 +3,35 @@
   margin: auto;
   height: auto;
 }
+
+.footer, .page-wrap:after {
+  height: 58px;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -60px;
+}
+
+.footer {
+    background-color: rgb(249, 249, 249);
+    line-height: 3;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    padding: 5px;
+    font-weight: 700;
+}
+
+.builtBy{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding:5px;
+}
+
+.middle {
+  margin-top: 15%;
+  width: 70%;
+}
