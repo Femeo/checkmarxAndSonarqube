@@ -1,8 +1,17 @@
 var express = require('express');
 var fs = require('fs');
-
+var bodyParser = require('body-parser');
 var app = express();
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(bodyParser.json());
+
 app.use('/', express.static('public'));
+
+
 app.get('/', function(req, res){
     res.sendFile(__dirname + "/index.html")
 })
@@ -22,8 +31,11 @@ app.listen(3000, function(){
 })
 
 app.post('/login', function(req, res){
-    
-    res.send($('#username'));
-
+    if(req.body.username == 'root' && req.body.password == 'pa55word'){
+        res.sendFile(__dirname + "/success.html");
+    } else{
+        res.sendFile(__dirname + "/index.html");
+    }
 })
+
 module.exports = app;

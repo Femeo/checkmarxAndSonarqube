@@ -1,5 +1,5 @@
 window.onload = function(){
-    console.log(document.getElementById('username').innerHTML)
+    console.log(document.getElementById('username').placeholder)
     function login(){
         console.log("now");
         var username = document.getElementById('username');
