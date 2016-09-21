@@ -21,4 +21,9 @@ app.listen(3000, function(){
     console.log("Working on port 3000");
 })
 
+app.post('/login', function(req, res){
+    
+    res.send($('#username'));
+
+})
 module.exports = app;

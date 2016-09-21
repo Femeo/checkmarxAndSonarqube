@@ -1,21 +1,29 @@
-function login(){
-    var username = document.getElementById('username');
-    var password = document.getElementById("password");
-    $.get('/availableUsernames').done(function(usernameResult){
-        console.log(usernameResult)
-    })
-    $.get('availablePasswords').done(function(passwordResult){
-        console.log(passwordResult)
-    })
-    if( username == "root" & password == "pa55w0rd"){
-        alert("login successful");
-        window.location = "success.html";
-        return false;
-    }
-    else{
-        alert("incorrect username or password, please try again");
-        document.getElementById('username').textContent = "";
-        document.getElementById('password').textContent = "";
-        return false;
+window.onload = function(){
+    console.log(document.getElementById('username').innerHTML)
+    function login(){
+        console.log("now");
+        var username = document.getElementById('username');
+        
+        var password = document.getElementById("password");
+        var usernameConfirmed = $.get('/availableUsernames').done(function(usernameResult){
+            if(username == usernameResult[0]){
+                return true;
+            }
+            return false;
+        })
+        var passwordConfirmed = $.get('availablePasswords').done(function(passwordResult){
+            return true;
+        })
+        if( usernameConfirmed == true && passwordConfirmed == true){
+            alert("login successful");
+            window.location = "success.html";
+            return false;
+        }
+        else{
+            console.log(document.getElementById("password") + "this");
+            alert("incorrect username or password, please try again");
+            document.getElementById('username').textContent = "";
+            document.getElementById('password').textContent = "";
+        }
     }
 }
