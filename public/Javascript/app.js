@@ -3,7 +3,7 @@ window.onload = function(){
     function login(){
         console.log("now");
         var username = document.getElementById('username');
-        
+
         var password = document.getElementById("password");
         var usernameConfirmed = $.get('/availableUsernames').done(function(usernameResult){
             if(username == usernameResult[0]){
@@ -23,7 +23,9 @@ window.onload = function(){
             console.log(document.getElementById("password") + "this");
             alert("incorrect username or password, please try again");
             document.getElementById('username').textContent = "";
+            // $("#username").val(""); <= Consider for shorter code
             document.getElementById('password').textContent = "";
+            // $("#password").val("");
         }
     }
 }
