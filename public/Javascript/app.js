@@ -1,6 +1,7 @@
 window.onload = function(){
     console.log(document.getElementById('username').placeholder)
     function login(){
+        alert("stop")
         console.log("now");
         var username = document.getElementById('username');
         
