@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <title>SonarCheck</title>
+    <link rel="stylesheet" type="text/css" href="/Stylesheets/bootstrap.css">
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="/Javascript/bootstrap.js"></script>
+</head>
+<body>
+  <style>
+    .list-none {
+      list-style-type: none;
+      margin: auto;
+      height: auto;
+    }
+    .footer, .page-wrap:after {
+      height: 58px;
+    }
+    .page-wrap {
+      min-height: 100%;
+      /* equal to footer height */
+      margin-bottom: -60px;
+    }
+    .footer {
+        background-color: rgb(249, 249, 249);
+        line-height: 3;
+        position: absolute;
+        bottom: 0;
+        width:100%;
+        padding: 5px;
+        font-weight: 700;
+    }
+    .builtBy{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding:5px;
+    }
+    .middle {
+      margin-top: 15%;
+      width: 70%;
+    }
+  </style>
+  <script>
+    function login(){
+        console.log("now");
+        var username = document.getElementById('username');
+
+        var password = document.getElementById("password");
+        var usernameConfirmed = $.get('/availableUsernames').done(function(usernameResult){
+            if(username == usernameResult[0]){
+                return true;
+            }
+            return false;
+        })
+        var passwordConfirmed = $.get('availablePasswords').done(function(passwordResult){
+            return true;
+        })
+        if( usernameConfirmed == true && passwordConfirmed == true){
+            alert("login successful");
+            window.location = "success.html";
+            return false;
+        }
+        else{
+            console.log(document.getElementById("password") + "this");
+            alert("incorrect username or password, please try again");
+            document.getElementById('username').textContent = "";
+            // $("#username").val(""); <= Consider for shorter code
+            document.getElementById('password').textContent = "";
+            // $("#password").val("");
+        }
+    }
+  </script>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand text-center">
+                    <p><img src="/images/sonar.png" class="logo"> and <img src="/images/check.png" class="logo" height="35"
+                            width="200"> Examples</p>
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container middle">
+        <form role="form" class="form-horizontal" method="post" action="/login">
+            <div class="form-group">
+                <label class="control-label col-md-2">Username:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control input-sm" name="username" placeholder="joe0bloggs" id="username" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Password:</label>
+                <div class="col-md-10">
+                    <input type="password" class="form-control input-sm" name="password" placeholder="**********" id="password" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary pull-right" id="submit" onClick="login()">Login <span class="glyphicon glyphicon-log-in"></span></button>
+                    <a class="pull-left" href="#">Forgot Password?</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="builtBy">
+                <h4>Built by Devops</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
